@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="../main.css" />
+    <title>Đăng ký khách hàng</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <h1 class="card-title text-center">Đăng ký khách hàng</h1>
+
+        <hr />
+
+        <form action="nhapkhachhang.php" method="post">
+          <div class="form-group">
+            <label for="TenKH">Tên khách hàng:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="TenKH"
+              name="TenKH"
+              placeholder="Nhập tên khách hàng"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="DiaChi">Địa chỉ:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="DiaChi"
+              name="DiaChi"
+              placeholder="Nhập địa chỉ khách hàng"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="Sosachmuon">Số sách mượn:</label>
+            <input
+              type="number"
+              class="form-control"
+              id="Sosachmuon"
+              name="Sosachmuon"
+              placeholder="Nhập số sách muốn mượn"
+              required
+            />
+          </div>
+
+          <div class="text-center mt-4">
+            <button type="submit" class="btn btn-primary">Đăng Ký</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
