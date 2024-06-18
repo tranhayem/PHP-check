@@ -1,15 +1,15 @@
 <?php
-$servername = "localhost"; // Đổi thành tên server của bạn
-$username = "root"; // Đổi thành username của bạn
-$password = ""; // Đổi thành password của bạn
-$dbname = "QL_Docgia"; // Đổi thành tên database của bạn
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "QL_Docgia";
 
 // Tạo kết nối
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Kiểm tra kết nối
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    die("Kết nối đến cơ sở dữ liệu thất bại: " . $conn->connect_error);
 }
 
 // Thiết lập số bản ghi trên mỗi trang
@@ -39,6 +39,7 @@ $result = $conn->query($sql);
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 
+    <link rel="stylesheet" href="../table.css">
     <title>Quản lý mượn sách</title>
 </head>
 
@@ -50,8 +51,8 @@ $result = $conn->query($sql);
                 <tr>
                     <th>Mã KH</th>
                     <th>Tên KH</th>
-                    <th>Địa Chỉ</th>
-                    <th>Số Sách Mượn</th>
+                    <th>Địa chỉ</th>
+                    <th>Số sách mượn</th>
                 </tr>
             </thead>
             <tbody>
@@ -59,10 +60,10 @@ $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
                         echo "<tr>
-                                <td>" . $row["MaKH"] . "</td>
+                                <td class='text-center align-middle'>" . $row["MaKH"] . "</td>
                                 <td>" . $row["TenKH"] . "</td>
                                 <td>" . $row["DiaChi"] . "</td>
-                                <td>" . $row["Sosachmuon"] . "</td>
+                                <td class='text-center align-middle'>" . $row["Sosachmuon"] . "</td>
                               </tr>";
                     }
                 } else {
